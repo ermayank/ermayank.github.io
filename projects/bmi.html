@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BMI CALCULATOR</title>
+<style type="text/css">
+input[type=text],th{
+	height: 30px;
+	padding: 8px;
+	font-size: 20px;
+	font-family: arial;
+
+}
+.height{
+	height: 30px;
+	padding: 8px;
+	width: 110px;
+	font-size: 20px;
+	font-family: arial;
+}
+.t3{
+	width: 96%;
+	text-align: center;
+
+}
+.tot{
+	font-size: 30px;
+	text-align: center;
+	text-decoration: bolder;
+
+}
+.but{
+  color: yellow;
+  width: 100%;
+  font-weight: bold;
+  font:2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+  font-size:25px;
+  padding:10px;
+  background-color:#78AB46;
+  border:1px solid #78AB46;
+  border-radius:10px;
+  border-bottom:1px solid #9f9f9f;
+  -moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  -webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  cursor:pointer;
+}
+.rbut{
+  color: black;
+  width: 100%;
+  font-weight: bold;
+  font:2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+  font-size:25px;
+  padding:10px;
+  background-color:orange;
+  border:1px solid #78AB46;
+  border-radius:10px;
+  border-bottom:1px solid #9f9f9f;
+  -moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  -webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+	<table>
+		<form name="frm1">
+		<thead>
+			<tr>
+				<th>WEIGHT</th>
+				<th>HEIGHT</th>
+				<th>RESULT</th>
+			</tr>
+		</thead>	
+		<tbody>
+			<tr>
+				<td>
+					<br>
+					<input type="text" name="masskg" placeholder="KILOGRAMS (Kg)"><br><br>
+					<center>OR</center><BR>
+					<input type="text" name="masslbs" placeholder="POUNDS (lb)"><br><br>
+				</td>
+				<td>
+					<br>
+					<input type="text" class="height" name="heightft" placeholder="Foot (Ft)">
+					<input type="text" class="height" name="heightin" placeholder="Inch (In)">
+					<br><br>
+					<center>OR</center><BR>
+					<input type="text" name="heightm" placeholder="Meters (m)"><br><br>
+				</td>
+				<td>
+					<br>
+					<input type="text" name="bmi" placeholder="BMI"><br><br>
+					<input type="text" name="resultbmi" placeholder="RESULT"><br><br>
+				</td>
+
+			</tr>
+			<tr>
+
+			<td>
+				<input type="button" class="but" value="SUBMIT" onclick="solve()">
+			</td>
+			<td>
+				<input type="RESET" class="rbut" value="RESET">
+								
+			</td>
+			</tr>
+		</tbody>
+</form>
+	</table>
+	<script type="text/javascript">
+		function solve() {
+	
+
+	//	var htm,htft,htin,masskg,masslbs;
+	
+			masskg=document.frm1.masskg.value;
+			masslbs=document.frm1.masslbs.value;
+					
+			htm=document.frm1.heightm.value;
+			htft=document.frm1.heightft.value;
+			htin=document.frm1.heightin.value;
+
+				
+
+	mass=masslbs*(2.20462);
+//	masslbs=masskg*(0.453592);
+
+	height=(htft*(0.3048))+(htin*(0.0254));
+	
+	
+
+	if(masskg)
+	{
+		if (height)
+		{
+			document.frm1.bmi.value=(((masskg)/((height)*(height))).toFixed(2)) ;
+
+			if (document.frm1.bmi.value<18.5)
+			{
+				document.frm1.resultbmi.value="UNDERWEIGHT";
+			}
+			else if(document.frm1.bmi.value>18.5 && document.frm1.bmi.value<24.9)
+			{
+				document.frm1.resultbmi.value="IDEAL WEIGHT";
+			}
+			else if(document.frm1.bmi.value>24.9 && document.frm1.bmi.value<29.9)
+			{
+				document.frm1.resultbmi.value="ABOVE IDEAL";
+			}
+			else if(document.frm1.bmi.value>29.9)
+			{
+				document.frm1.resultbmi.value="OBESE";
+			}
+		}
+		else if(htm)
+		{
+			document.frm1.bmi.value=(((masskg)/((htm)*(htm))).toFixed(2)) ;
+			if (document.frm1.bmi.value<18.5)
+			{
+				document.frm1.resultbmi.value="UNDERWEIGHT";
+			}
+			else if(document.frm1.bmi.value>18.5 && document.frm1.bmi.value<24.9)
+			{
+				document.frm1.resultbmi.value="IDEAL WEIGHT";
+			}
+			else if(document.frm1.bmi.value>25 && document.frm1.bmi.value<29.9)
+			{
+				document.frm1.resultbmi.value="ABOVE IDEAL";
+			}
+			else if(document.frm1.bmi.value>30)
+			{
+				document.frm1.resultbmi.value="OBESE";
+			}
+		}
+	}
+	else if (mass)
+	{
+		if (height)
+		{
+			document.frm1.bmi.value=(((mass)/((height)*(height))).toFixed(2)) ;
+			if (document.frm1.bmi.value<18.5)
+			{
+				document.frm1.resultbmi.value="UNDERWEIGHT";
+			}
+			else if(document.frm1.bmi.value>18.5 && document.frm1.bmi.value<24.9)
+			{
+				document.frm1.resultbmi.value="IDEAL WEIGHT";
+			}
+			else if(document.frm1.bmi.value>25 && document.frm1.bmi.value<29.9)
+			{
+				document.frm1.resultbmi.value="ABOVE IDEAL";
+			}
+			else if(document.frm1.bmi.value>30)
+			{
+				document.frm1.resultbmi.value="OBESE";
+			}
+		}
+		else if(htm)
+		{
+			document.frm1.bmi.value=(((mass)/((htm)*(htm))).toFixed(2)) ;
+			if (document.frm1.bmi.value<18.5)
+			{
+				document.frm1.resultbmi.value="UNDERWEIGHT";
+			}
+			else if(document.frm1.bmi.value>18.5 && document.frm1.bmi.value<24.9)
+			{
+				document.frm1.resultbmi.value="IDEAL WEIGHT";
+			}
+			else if(document.frm1.bmi.value>25 && document.frm1.bmi.value<29.9)
+			{
+				document.frm1.resultbmi.value="ABOVE IDEAL";
+			}
+			else if(document.frm1.bmi.value>30)
+			{
+				document.frm1.resultbmi.value="OBESE";
+			}
+		}
+	}
+
+	if (document.frm1.bmi.value<18.5)
+	{
+		document.frm1.resultbmi.value="UNDERWEIGHT";
+	}
+	else if(document.frm1.bmi.value>18.5 && document.frm1.bmi.value<24.9)
+	{
+		document.frm1.resultbmi.value="IDEAL WEIGHT";
+	}
+	else if(document.frm1.bmi.value>25 && document.frm1.bmi.value<29.9)
+	{
+		document.frm1.resultbmi.value="ABOVE IDEAL";
+	}
+	else if(document.frm1.bmi.value>30)
+	{
+		document.frm1.resultbmi.value="OBESE";
+	}
+}
+	</script>
+</body>
+</html>
