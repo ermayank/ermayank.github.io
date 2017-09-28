@@ -62,7 +62,45 @@ input[type=text],th{
 }
 
 </style>
-
+<script language="JavaScript">
+  window.onload = function() {
+    document.addEventListener("contextmenu", function(e){
+      e.preventDefault();
+    }, false);
+    document.addEventListener("keydown", function(e) {
+    //document.onkeydown = function(e) {
+      // "I" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+        disabledEvent(e);
+      }
+      // "J" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+        disabledEvent(e);
+      }
+      // "S" key + macOS
+      if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+        disabledEvent(e);
+      }
+      // "U" key
+      if (e.ctrlKey && e.keyCode == 85) {
+        disabledEvent(e);
+      }
+      // "F12" key
+      if (event.keyCode == 123) {
+        disabledEvent(e);
+      }
+    }, false);
+    function disabledEvent(e){
+      if (e.stopPropagation){
+        e.stopPropagation();
+      } else if (window.event){
+        window.event.cancelBubble = true;
+      }
+      e.preventDefault();
+      return false;
+    }
+  }
+</script>
 </head>
 
 <body>
@@ -112,132 +150,8 @@ input[type=text],th{
 </form>
 	</table>
 	<script type="text/javascript">
-		function solve() {
-	
-
-	//	var htm,htft,htin,masskg,masslbs;
-	
-			masskg=document.frm1.masskg.value;
-			masslbs=document.frm1.masslbs.value;
-					
-			htm=document.frm1.heightm.value;
-			htft=document.frm1.heightft.value;
-			htin=document.frm1.heightin.value;
-
-				
-
-	mass=masslbs*(2.20462);
-//	masslbs=masskg*(0.453592);
-
-	height=(htft*(0.3048))+(htin*(0.0254));
-	
-	
-
-	if(masskg)
-	{
-		if (height)
-		{
-			document.frm1.bmi.value=(((masskg)/((height)*(height))).toFixed(2)) ;
-
-			if (document.frm1.bmi.value<18.5)
-			{
-				document.frm1.resultbmi.value="UNDERWEIGHT";
-			}
-			else if(document.frm1.bmi.value>18.5 && document.frm1.bmi.value<24.9)
-			{
-				document.frm1.resultbmi.value="IDEAL WEIGHT";
-			}
-			else if(document.frm1.bmi.value>24.9 && document.frm1.bmi.value<29.9)
-			{
-				document.frm1.resultbmi.value="ABOVE IDEAL";
-			}
-			else if(document.frm1.bmi.value>29.9)
-			{
-				document.frm1.resultbmi.value="OBESE";
-			}
-		}
-		else if(htm)
-		{
-			document.frm1.bmi.value=(((masskg)/((htm)*(htm))).toFixed(2)) ;
-			if (document.frm1.bmi.value<18.5)
-			{
-				document.frm1.resultbmi.value="UNDERWEIGHT";
-			}
-			else if(document.frm1.bmi.value>18.5 && document.frm1.bmi.value<24.9)
-			{
-				document.frm1.resultbmi.value="IDEAL WEIGHT";
-			}
-			else if(document.frm1.bmi.value>25 && document.frm1.bmi.value<29.9)
-			{
-				document.frm1.resultbmi.value="ABOVE IDEAL";
-			}
-			else if(document.frm1.bmi.value>30)
-			{
-				document.frm1.resultbmi.value="OBESE";
-			}
-		}
-	}
-	else if (mass)
-	{
-		if (height)
-		{
-			document.frm1.bmi.value=(((mass)/((height)*(height))).toFixed(2)) ;
-			if (document.frm1.bmi.value<18.5)
-			{
-				document.frm1.resultbmi.value="UNDERWEIGHT";
-			}
-			else if(document.frm1.bmi.value>18.5 && document.frm1.bmi.value<24.9)
-			{
-				document.frm1.resultbmi.value="IDEAL WEIGHT";
-			}
-			else if(document.frm1.bmi.value>25 && document.frm1.bmi.value<29.9)
-			{
-				document.frm1.resultbmi.value="ABOVE IDEAL";
-			}
-			else if(document.frm1.bmi.value>30)
-			{
-				document.frm1.resultbmi.value="OBESE";
-			}
-		}
-		else if(htm)
-		{
-			document.frm1.bmi.value=(((mass)/((htm)*(htm))).toFixed(2)) ;
-			if (document.frm1.bmi.value<18.5)
-			{
-				document.frm1.resultbmi.value="UNDERWEIGHT";
-			}
-			else if(document.frm1.bmi.value>18.5 && document.frm1.bmi.value<24.9)
-			{
-				document.frm1.resultbmi.value="IDEAL WEIGHT";
-			}
-			else if(document.frm1.bmi.value>25 && document.frm1.bmi.value<29.9)
-			{
-				document.frm1.resultbmi.value="ABOVE IDEAL";
-			}
-			else if(document.frm1.bmi.value>30)
-			{
-				document.frm1.resultbmi.value="OBESE";
-			}
-		}
-	}
-
-	if (document.frm1.bmi.value<18.5)
-	{
-		document.frm1.resultbmi.value="UNDERWEIGHT";
-	}
-	else if(document.frm1.bmi.value>18.5 && document.frm1.bmi.value<24.9)
-	{
-		document.frm1.resultbmi.value="IDEAL WEIGHT";
-	}
-	else if(document.frm1.bmi.value>25 && document.frm1.bmi.value<29.9)
-	{
-		document.frm1.resultbmi.value="ABOVE IDEAL";
-	}
-	else if(document.frm1.bmi.value>30)
-	{
-		document.frm1.resultbmi.value="OBESE";
-	}
-}
+		
+var _$_8f7d=["value","masskg","frm1","masslbs","heightm","heightft","heightin","bmi","toFixed","resultbmi","UNDERWEIGHT","IDEAL WEIGHT","ABOVE IDEAL","OBESE"];function solve(){masskg= document[_$_8f7d[2]][_$_8f7d[1]][_$_8f7d[0]];masslbs= document[_$_8f7d[2]][_$_8f7d[3]][_$_8f7d[0]];htm= document[_$_8f7d[2]][_$_8f7d[4]][_$_8f7d[0]];htft= document[_$_8f7d[2]][_$_8f7d[5]][_$_8f7d[0]];htin= document[_$_8f7d[2]][_$_8f7d[6]][_$_8f7d[0]];mass= masslbs* (2.20462);height= (htft* (0.3048))+ (htin* (0.0254));if(masskg){if(height){document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]= (((masskg)/ ((height)* (height)))[_$_8f7d[8]](2));if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]< 18.5){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[10]}else {if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]> 18.5&& document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]< 24.9){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[11]}else {if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]> 24.9&& document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]< 29.9){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[12]}else {if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]> 29.9){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[13]}}}}}else {if(htm){document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]= (((masskg)/ ((htm)* (htm)))[_$_8f7d[8]](2));if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]< 18.5){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[10]}else {if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]> 18.5&& document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]< 24.9){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[11]}else {if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]> 25&& document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]< 29.9){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[12]}else {if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]> 30){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[13]}}}}}}}else {if(mass){if(height){document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]= (((mass)/ ((height)* (height)))[_$_8f7d[8]](2));if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]< 18.5){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[10]}else {if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]> 18.5&& document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]< 24.9){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[11]}else {if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]> 25&& document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]< 29.9){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[12]}else {if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]> 30){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[13]}}}}}else {if(htm){document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]= (((mass)/ ((htm)* (htm)))[_$_8f7d[8]](2));if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]< 18.5){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[10]}else {if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]> 18.5&& document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]< 24.9){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[11]}else {if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]> 25&& document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]< 29.9){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[12]}else {if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]> 30){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[13]}}}}}}}};if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]< 18.5){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[10]}else {if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]> 18.5&& document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]< 24.9){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[11]}else {if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]> 25&& document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]< 29.9){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[12]}else {if(document[_$_8f7d[2]][_$_8f7d[7]][_$_8f7d[0]]> 30){document[_$_8f7d[2]][_$_8f7d[9]][_$_8f7d[0]]= _$_8f7d[13]}}}}}
 	</script>
 </body>
 </html>
