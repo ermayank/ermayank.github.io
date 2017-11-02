@@ -1,0 +1,52 @@
+.war{
+    text-transform: uppercase;
+    color: red;
+}
+.style{
+	padding: 5px;
+    height: auto;
+    font-weight: bold;
+	font-size: 20px;
+	width: 700px;
+     }
+ .but{
+ 	width:70px;
+ 	height:50px;
+ 	font-weight: bold;
+ 	font-size: 18px;
+ 	 }
+ body {
+    color: #797979;
+    background: #eaedae;
+    font-family: 'Lato', sans-serif;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size:14px !important;    
+}
+.zero{
+    width:135px;
+    height:50px;
+    font-weight: bold; 
+    font-size: 15px;"
+}
+.eq{
+      width:64.5px;
+      height:100px;
+      font-weight: bold; 
+      font-size: 15px;"
+}
+.box{
+     width:277px;
+     height:50px;
+     font-weight: bold;
+     font-size: 15px;" 
+}
+h1,h2,h3,h4,h5{
+    font-weight: 600;
+}
+label{
+    font-weight: 300;   
+}
+ul li {
+    list-style: inherit;
+}
