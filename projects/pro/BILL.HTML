@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BILL SEPERATOR</title>
+<style type="text/css">
+body{
+		font-size: 20px;
+
+}
+h1{
+	text-transform: uppercase;
+}
+input[type=text] {
+  height: 30px;
+  padding: 5px;
+  margin: 4px;
+  margin-left: 30px;
+}
+
+
+.butsub {
+  color: yellow;
+  font-weight: bold;
+  font:2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+  font-size:70%;
+  padding:14px;
+  background-color:#78AB46;
+  border:1px solid #78AB46;
+  border-radius:10px;
+  border-bottom:1px solid #9f9f9f;
+  -moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  -webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  cursor:pointer;
+ }
+ .butres {
+  color: yellow;
+  font-weight: bold;
+  font:2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+  font-size:70%;
+  padding:14px;
+  background-color:orange;
+  border:1px solid orange;
+  border-radius:10px;
+  border-bottom:1px solid #9f9f9f;
+  -moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  -webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  cursor:pointer;
+ }
+ .butmres {
+  color: yellow;
+  font-weight: bold;
+  font:2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+  font-size:70%;
+  padding:14px;
+  background-color:red;
+  border:1px solid red;
+  border-radius:10px;
+  border-bottom:1px solid #9f9f9f;
+  -moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  -webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  cursor:pointer;
+ }
+
+
+</style>
+</head>
+<body>
+<!-- DHABA BILL CALCULATOR DESIGNED BY MAYANK GUPTA-->
+<h1>Bill calculator</h1>
+	
+	<form name="frm1">
+<input type="text" name="t2" placeholder="Total Amount (without tax)"><br>
+<input type="text" id="t1" name="t1"placeholder="Total Amount paid"> <br>
+<input type="text" name="t3" placeholder="Amount Of One">&nbsp;&nbsp;<br><br>
+		
+Your Amount<input type="text" name="rel" disabled>&nbsp;&nbsp;<br><br>
+	
+		<input type="button" class="butsub" onclick="funa()" value="SUBMIT">
+		<input type="button" class="butres" onclick="res()" value="RESET">
+		<input type="button" class="butmres" onclick="mres()" value="MASTER RESET">
+		
+		</form>
+	<script type="text/javascript">
+
+var _$_cafd=["value","t1","frm1","t2","t3","round","rel",""];function funa(){var _0xCC97=document[_$_cafd[2]][_$_cafd[1]][_$_cafd[0]];var _0xCCE4=document[_$_cafd[2]][_$_cafd[3]][_$_cafd[0]];var _0xCD31=document[_$_cafd[2]][_$_cafd[4]][_$_cafd[0]];var _0xCD7E,_0xCDCB;_0xCD7E= (_0xCD31* 100)/ _0xCCE4;_0xCDCB= Math[_$_cafd[5]]((_0xCD7E* _0xCC97)/ 100);document[_$_cafd[2]][_$_cafd[6]][_$_cafd[0]]= _0xCDCB}function res(){document[_$_cafd[2]][_$_cafd[4]][_$_cafd[0]]= _$_cafd[7];document[_$_cafd[2]][_$_cafd[6]][_$_cafd[0]]= _$_cafd[7]}function mres(){document[_$_cafd[2]][_$_cafd[4]][_$_cafd[0]]= _$_cafd[7];document[_$_cafd[2]][_$_cafd[1]][_$_cafd[0]]= _$_cafd[7];document[_$_cafd[2]][_$_cafd[3]][_$_cafd[0]]= _$_cafd[7];document[_$_cafd[2]][_$_cafd[6]][_$_cafd[0]]= _$_cafd[7]}
+	</script>
+</body>
+</html>
