@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV CHARGING SIMULATION</title>
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+   <center> <h2>EV CHARGING LOAD DISTRIBUTION</h2></center>
+    
+    <div class="overall">
+        <div class="data-enter">
+            <label>Enter rating of Distribution transformer (KW)</label>
+            <input type="text" id="tf-data"><br>
+            <label>Enter Number of houses on that Transformer </label>
+            <input type="text" id="houses"><br>
+            <button class="btn-submit">Get load Curve</button>
+            <button class="btn-ev">Charge EVs</button>
+            <button class="btn-ev-algo">Charge EVs Algo</button>
+        </div>
+        <div class="chart-container">
+            <div class="chart-container-1">
+                <canvas class="chart-size" id="myChart"></canvas>
+            </div>
+        
+            <div class="chart-container-2">
+                <canvas id="myChart-ev"></canvas>
+            </div>
+         
+            <div class="chart-container-3">
+                <canvas id="myChart-ev-algo"></canvas>
+            </div>
+        
+        </div>
+    </div>
+    
+    
+    
+     
+    <script src="./chart.js"></script>
+ <script src="./app_testing.js"></script>
+ 
+</body>
+</html>
