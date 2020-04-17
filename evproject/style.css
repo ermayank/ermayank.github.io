@@ -1,0 +1,15 @@
+.overall{
+    display: flex;
+}
+.data-enter{
+    flex: 1;
+}
+.chart-container{
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+}
+.chart-container{
+    height:300px; 
+    width:500px;
+}
